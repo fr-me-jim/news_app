@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import Header from './components/Header';
 
 class App extends Component {
   state = { 
@@ -21,7 +22,17 @@ class App extends Component {
   }
   
   render() { 
-    return ( <h1>Noticias API React</h1> );
+    return ( 
+      <Fragment>
+        <Header
+          title='News with React API'
+        />
+
+        <div className="container white news-container">
+          
+        </div>
+      </Fragment>
+    );
   }
 }
  
