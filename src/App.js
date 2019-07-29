@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Header from './components/Header';
+import NewsList from './components/NewsList';
 
 class App extends Component {
   state = { 
@@ -29,7 +30,10 @@ class App extends Component {
         />
 
         <div className="container white news-container">
-          
+          <NewsList 
+            news={this.state.news}
+          />    
+
         </div>
       </Fragment>
     );
