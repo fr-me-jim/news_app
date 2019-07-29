@@ -26,7 +26,7 @@ const News = ({news}) => {
 
                 <div className="card-action">
                     {/* rel="noopener noreferrer" to fix security breach from  target="_blank" */}
-                    <a href={url} target="_blank" rel="noopener noreferrer" className="waves-effect waves-light btn">
+                    <a href={url} target="_blank" rel="noopener noreferrer" className="waves-effect waves-light btn pink darken-3">
                         Go to article
                     </a>
                 </div>
