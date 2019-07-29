@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class CategoryForm extends Component {
     state = { 
@@ -39,6 +40,10 @@ class CategoryForm extends Component {
             </div>
         );
     }
+}
+
+CategoryForm.propTypes = {    
+    handleGetNews : PropTypes.func.isRequired 
 }
  
 export default CategoryForm;
