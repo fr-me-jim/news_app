@@ -12,8 +12,8 @@ class App extends Component {
     this.handleGetNews();
   }
 
-  handleGetNews = async () => {
-    const url = `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=323c894f6d7443dea2613c06482e22e3`
+  handleGetNews = async (category = 'general') => {
+    const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=323c894f6d7443dea2613c06482e22e3`
 
     const response = await fetch(url);
     const news = await response.json();
@@ -31,7 +31,9 @@ class App extends Component {
         />
 
         <div className="container white news-container">
-          <CategoryForm />
+          <CategoryForm 
+            handleGetNews={this.handleGetNews}
+          />
 
           <NewsList 
             news={this.state.news}

@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
 
 class CategoryForm extends Component {
-    state = {  }
+    state = { 
+        category : 'general'
+    }
+
+    handleCategoryChange = e => {
+        this.setState({
+            category : e.target.value
+        }, () => {
+            //callback function 
+            this.props.handleGetNews(this.state.category);
+        })
+    }
+
     render() { 
         return ( 
             <div className="search-engine row">
@@ -9,9 +21,9 @@ class CategoryForm extends Component {
                     <form action="">
                         <h3>Find news by Category</h3>
                         
-                        <div className="input-field col s12 m8">
+                        <div className="input-field col s12 m8 offset-2">
                             <select 
-                                // onChange={this.handleCategoryChange}
+                                onChange={this.handleCategoryChange}
                             >
                                 <option value="general"> General </option>
                                 <option value="business"> Business </option>
